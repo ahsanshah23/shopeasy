@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <title>
+    Make List
+  </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="/demo/demo.css" rel="stylesheet" />
+</head>
+
+
+<body style="padding-left: 02%; padding-right:02%; padding-top:02%">
+  <div class="wrapper">
+    <div class="content">
+
+      <form name="thisform">
+
+        {{#each result}}
+        <div class="row">
+          <input type="checkbox" value={{id}}>
+          <h3 style="color: white;">{{name}}</h3>
+          &nbsp;
+          <h3 style="color: white;">{{category}}</h3>
+        </div>
+        {{/each}}
+
+        <input type="button" value="Submit" onclick="loopForm(document.thisform);">
+
+      </form>
+
+      <div id="cbResults" style="color: white;"></div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function loopForm(form) {
+
+      var cbResults = "";
+
+      for (var i = 0; i < form.elements.length; i++) {
+
+        if (form.elements[i].type == 'checkbox') {
+          if (form.elements[i].checked == true) {
+            cbResults += form.elements[i].value + ",";
+          }
+        }
+      }
+
+      const data = { items: cbResults,
+        name: "List Name 1"
+       };
+
+      fetch('/selecedlist', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then(response => response.json())
+        .then(data => {
+        });
+
+
+    }
+  </script>
+
+  <!--   Core JS Files   -->
+  <script src="/js/core/jquery.min.js"></script>
+  <script src="/js/core/popper.min.js"></script>
+  <script src="/js/core/bootstrap.min.js"></script>
+  <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="/js/plugins/chartjs.min.js"></script>
+  <script src="js/plugins/bootstrap-notify.js"></script>
+  <script src="/js/black-dashboard.min.js?v=1.0.0"></script>
+  <script src="/demo/demo.js"></script>
+
+
+</body>
+
+</html>

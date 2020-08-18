@@ -1,0 +1,124 @@
+body {
+    /* background-image: url('https://c4.wallpaperflare.com/wallpaper/185/696/989/dark-blur-abstract-minimalism-wallpaper-preview.jpg'); */
+    background-color: black;
+    font-family: "Raleway", sans-serif;
+    color: white;
+}
+
+.card {
+    /* background-image: url('https://images.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
+    /* background-color: #17202A; */
+    background-color: rgb(34, 43, 43);
+    font-weight: 800;
+    width: 100%;
+    /* margin-bottom: 10%; */
+
+}
+
+.card a.hover {
+   color: white;
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+ 
+
+    .box {
+        width: 70%;
+    }
+
+
+
+}
+
+
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    align-content: center;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    /* background-image: url('https://c4.wallpaperflare.com/wallpaper/185/696/989/dark-blur-abstract-minimalism-wallpaper-preview.jpg'); */
+    background-color: black;
+    margin: 5% auto;
+    padding: 20px;
+    overflow: auto;
+    border: 1px solid #888;
+
+    width: 40%;
+    height: 80%;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .popup {
+        width: 80%;
+        margin: 15% auto;
+    }
+
+}
+
+
+
+.btn {
+    background-color: white;
+    width: 30%;
+    height: 50%;
+}
